@@ -1,1 +1,4 @@
 *.csv
+*.tgz
+\Intro to Machine Learning\maildir\*
+/Intro to Machine Learning/maildir/*
