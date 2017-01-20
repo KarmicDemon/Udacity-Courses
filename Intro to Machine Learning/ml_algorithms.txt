@@ -1,0 +1,6 @@
+naive_bayes
+decision_tree
+svm
+k nearest neighbors
+random forest
+adaboost (boosted decision tree)

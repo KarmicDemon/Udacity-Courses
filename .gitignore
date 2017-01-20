@@ -2,3 +2,5 @@
 *.tgz
 \Intro to Machine Learning\maildir\*
 /Intro to Machine Learning/maildir/*
+\Intro to Machine Learning\final_project\emails_by_address\*
+/Intro to Machine Learning/final_project\emails_by_address/*
