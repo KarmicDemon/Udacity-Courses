@@ -49,18 +49,30 @@ data_dict = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 ### there's an outlier--remove it!
 data_dict.pop("TOTAL", 0)
 
-_max = 0
-_min = sys.maxint
+_max_s = 0
+_min_s = sys.maxint
+
+_max_e = 0
+_min_e = sys.maxint
 
 for i in data_dict.keys():
     eso = data_dict[i]['salary']
+    ee = data_dict[i]['exercised_stock_options']
 
     if not math.isnan(float(eso)):
-        _max = max(_max, eso)
-        _min = min(_min, eso)
+        _max_s = max(_max_s, eso)
+        _min_s = min(_min_s, eso)
 
-print 'Max is', _max
-print 'Min is', _min
+    if not math.isnan(float(ee)):
+        _max_e = max(_max_e, ee)
+        _min_e = min(_min_s, ee)
+
+range_salary = _max_s - _min_s
+range_eso = _max_e - _min_e
+
+
+print 'Scaled Salary Value:', (200000 - _min_s) / float(range_salary)
+print 'Scaled ESO Value:', (1000000 - _min_e) / float(range_eso)
 
 ### the input features we want to use
 ### can be any key in the person-level dictionary (salary, director_fees, etc.)
