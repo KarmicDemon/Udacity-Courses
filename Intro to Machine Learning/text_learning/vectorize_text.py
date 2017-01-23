@@ -62,7 +62,7 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
 
             ### append a 0 to from_data if email is from Sara,
             ### and 1 if email is from Chris
-            if from_person == "sara":
+            if name == "sara":
                 from_data.append(0)
             else:
                 from_data.append(1)
@@ -78,7 +78,7 @@ vect = TfidfVectorizer(stop_words='english',)
 vect.fit_transform(word_data)
 print len(vect.get_feature_names())
 
-print vect.get_feature_names()[34597]
+print vect.get_feature_names()[33615]
 
 pickle.dump( word_data, open("your_word_data.pkl", "w") )
 pickle.dump( from_data, open("your_email_authors.pkl", "w") )
