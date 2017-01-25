@@ -53,7 +53,8 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
 
             ### use str.replace() to remove any instances of the words
             hello = [" sara", " shackleton", " chris", " germani", \
-                "sara ", "shackleton ", "chris ", "germani "]
+                "sara ", "shackleton ", "chris ", "germani ", "sshacklensf ", \
+                ' sshacklensf']
             for word in hello:
                 text = text.replace(word, ' ')
 
@@ -78,7 +79,7 @@ vect = TfidfVectorizer(stop_words='english',)
 vect.fit_transform(word_data)
 print len(vect.get_feature_names())
 
-print vect.get_feature_names()[33615]
+print vect.get_feature_names()[14343]
 
 pickle.dump( word_data, open("your_word_data.pkl", "w") )
 pickle.dump( from_data, open("your_email_authors.pkl", "w") )
